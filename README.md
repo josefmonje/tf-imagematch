@@ -42,4 +42,15 @@ Use those outputs in this code as SOURCE_GRAPH and SOURCE_LABELS.
 
 #### Graph is missing
 
-* output_graph.pb 
+* output_graph.pb
+
+#### Output
+
+```
+Matches:
+dandelion (0.9902)
+sunflowers (0.0042)
+tulips (0.0033)
+daisy (0.0014)
+roses (0.0009)
+```
