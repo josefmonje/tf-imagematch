@@ -84,9 +84,9 @@ class ImageMatch(object):
         elif not os.path.exists(target_image):
             raise NullImageException("Target image does not exist.")
 
-        with tf.Session() as session, open(target_image, 'rb') as image:  # noqa
+        with tf.Session() as session, open(target_image, 'rb') as image:
             tensor = session.graph.get_tensor_by_name('final_result:0')  # retrained
-            predictions = session.run(tensor, {'DecodeJpeg/contents:0': image.read()})
+            predictions = session.run(tensor, {'DecodeJpeg/contents:0': image.read()})  # noqa
             self.predictions = np.squeeze(predictions)
             self.results = self.predictions.argsort()[::-1]  # results in ascending order
 
@@ -108,5 +108,5 @@ class ImageMatch(object):
 
 
 if __name__ == '__main__':
-    cls = ImageMatch(limit=10, source_graph='output_graph.pb', source_labels='output_labels.txt')
+    cls = ImageMatch(limit=10, source_graph='output_graph.pb', source_labels='output_labels.txt')  # noqa
     cls.match('test.jpg')
