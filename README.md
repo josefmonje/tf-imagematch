@@ -32,7 +32,7 @@ Use those outputs in this code as SOURCE_GRAPH and SOURCE_LABELS.
 
 ## Match an Image
 
-im.match('test.jpg')
+`im.match('test.jpg')`
 
 
 #### Labels and test image for flower retraining tutorial included
